@@ -1,3 +1,7 @@
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
 body {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(to bottom, #ffe6f2, #ffd1e6); /* soft pink gradient */
@@ -25,8 +29,12 @@ body {
 
 .container {
     max-width: 700px;
+    width: 100%;
     margin: 30px auto 120px;
+    padding: 0 12px;
+    box-sizing: border-box;
 }
+
 
 .entry {
     background: #ffe6f2;
@@ -248,3 +256,24 @@ body {
     padding: 5px;
     border-radius: 16px;
 }
+
+@media (max-width: 900px) {
+    .side-gallery {
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+      width: 100%;
+      flex-direction: row;
+      justify-content: center;
+      gap: 14px;
+      margin: 18px auto 30px;
+      display: flex;
+      pointer-events: auto;
+    }
+  
+    .side-gallery img {
+      width: 70px !important;
+    }
+  }
+  
