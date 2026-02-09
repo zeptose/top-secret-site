@@ -13,16 +13,20 @@
     <!-- Floating hearts container -->
     <div id="hearts-container"></div>
 
-    <!-- Page header -->
-    <div class="header">
+    <!-- Page header: stays at top, subtitle changes per page -->
+    <header class="site-header">
         <h1 class="title">💖 For My Princess, Eujin 💖</h1>
-        <p class="subtitle">A collection of my thoughts about you over the last two months 💞</p>
-        <nav class="tabs">
-            <button type="button" class="tab-btn active" data-tab="thoughts">Thoughts 💭</button>
-            <button type="button" class="tab-btn" data-tab="timeline">Our Dates 📸</button>
-            <button type="button" class="tab-btn" data-tab="valentine">Valentine 💕</button>
-        </nav>
-    </div>
+        <p class="subtitle" id="pageSubtitle">A collection of my thoughts about you over the last two months 💞</p>
+        <div class="nav-ribbon">
+            <span class="ribbon-knot">💗</span>
+            <nav class="tabs" role="navigation">
+                <button type="button" class="tab-btn active" data-tab="thoughts"><span class="tab-emoji">💭</span><span class="tab-label">Thoughts</span></button>
+                <button type="button" class="tab-btn" data-tab="timeline"><span class="tab-emoji">📸</span><span class="tab-label">Our Dates</span></button>
+                <button type="button" class="tab-btn" data-tab="valentine"><span class="tab-emoji">💕</span><span class="tab-label">Valentine</span></button>
+            </nav>
+            <span class="ribbon-knot">💗</span>
+        </div>
+    </header>
     
     <!-- Mobile-friendly floating photo banners -->
     <div class="side-gallery left-gallery">
@@ -128,7 +132,7 @@
                 <div class="timeline-img-wrap"><img src="images/timeline-4.png" alt="Dinner date"></div>
                 <div class="timeline-card">
                     <span class="timeline-label">Dinner date</span>
-                    <p>That place with the pretty lights and our matching smiles 🍽️💕</p>
+                    <p>Our first date and our cute smiles fill me with joy 🍽️💕</p>
                 </div>
             </div>
             <div class="timeline-item">
@@ -142,7 +146,7 @@
                 <div class="timeline-img-wrap"><img src="images/timeline-6.png" alt="Adventures"></div>
                 <div class="timeline-card">
                     <span class="timeline-label">Adventures</span>
-                    <p>Exploring the city with you — every day with you feels like an adventure 🚇</p>
+                    <p>Our spot that we first met and everytime I take that subway I stare a look for a bit to think about our journey together 🚇</p>
                 </div>
             </div>
         </div>

@@ -1,8 +1,15 @@
-// Tab navigation
+// Tab navigation — each tab is its own page, scroll to top, update subtitle
 const tabBtns = document.querySelectorAll('.tab-btn');
 const pages = document.querySelectorAll('.page');
 const sideGalleries = document.querySelectorAll('.side-gallery');
 const surpriseBtn = document.getElementById('surpriseBtn');
+const pageSubtitle = document.getElementById('pageSubtitle');
+
+const subtitles = {
+    thoughts: 'A collection of my thoughts about you over the last two months 💞',
+    timeline: 'Some of my favorite moments with you 📸',
+    valentine: 'Will you be my Valentine? 💕'
+};
 
 function showPage(tabId) {
     pages.forEach(p => p.classList.remove('active'));
@@ -11,10 +18,13 @@ function showPage(tabId) {
     const btn = document.querySelector('.tab-btn[data-tab="' + tabId + '"]');
     if (page) page.classList.add('active');
     if (btn) btn.classList.add('active');
+    if (pageSubtitle && subtitles[tabId]) pageSubtitle.textContent = subtitles[tabId];
     // Show side galleries only on thoughts page
     const showGallery = tabId === 'thoughts';
     sideGalleries.forEach(g => { g.style.display = showGallery ? '' : 'none'; });
     surpriseBtn.style.display = (tabId === 'thoughts' && window.scrollY + window.innerHeight >= document.body.scrollHeight - 50) ? 'block' : 'none';
+    // Always start at top of the new "page" so it feels like its own screen
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 tabBtns.forEach(btn => {
