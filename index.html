@@ -17,6 +17,11 @@
     <div class="header">
         <h1 class="title">💖 For My Princess, Eujin 💖</h1>
         <p class="subtitle">A collection of my thoughts about you over the last two months 💞</p>
+        <nav class="tabs">
+            <button type="button" class="tab-btn active" data-tab="thoughts">Thoughts 💭</button>
+            <button type="button" class="tab-btn" data-tab="timeline">Our Dates 📸</button>
+            <button type="button" class="tab-btn" data-tab="valentine">Valentine 💕</button>
+        </nav>
     </div>
     
     <!-- Mobile-friendly floating photo banners -->
@@ -34,6 +39,8 @@
         <img src="images/IMG_4770.JPG" alt="">
     </div>
 
+<!-- Thoughts page (default) -->
+<section id="thoughts" class="page active">
 <div class="container">
     <div class="month-separator october">October 💖</div>
     <div class="entry"><div class="date">10/22</div><p>Looking back on the past weekend, I had so much fun and was genuinely really happy. Just thinking about it brings me so much joy and a big smile to my face at work. Thank you so much for the great memories, even though the time was short 😊😊</p></div>
@@ -87,9 +94,75 @@
     <div class="entry"><div class="date">12/22</div><p>Its been a week since we have begun talking again and I feel really really happy, what makes this time different to me is that it seems we are both willing to give it our all and put in effort which is something that lacked in the past. We have had some really deep convos and I feel closer to Euj since I ultimately want to be able to understand her to a really deep level so I can love her the way she feels loved most and also make her feel cared for, appreciated and fully supported. I am so excited to spend more time with her since shes the only person I want to give my all to and put in so much effort for and I hope one day in a future I can call her my girlfriend again  </p></div>
 
 </div>
-
-
 <button id="surpriseBtn" class="surprise-btn">Click for a surprise ✨💗</button>
+</section>
+
+<!-- Timeline page: our dates -->
+<section id="timeline" class="page">
+    <div class="timeline-wrap">
+        <h2 class="timeline-title">Our little timeline of dates 💕</h2>
+        <p class="timeline-sub">Some of my favorite moments with you</p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-img-wrap"><img src="images/timeline-1.png" alt="Cozy night in"></div>
+                <div class="timeline-card">
+                    <span class="timeline-label">Cozy nights</span>
+                    <p>You at your laptop — one of those calm, cute moments I love 💖</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-img-wrap"><img src="images/timeline-2.png" alt="Forehead kiss"></div>
+                <div class="timeline-card">
+                    <span class="timeline-label">Forever moments</span>
+                    <p>This one lives in my head rent-free. So grateful for you 🥹</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-img-wrap"><img src="images/timeline-3.png" alt="Snowy day"></div>
+                <div class="timeline-card">
+                    <span class="timeline-label">Snow day</span>
+                    <p>Red umbrella in the snow — you looked so cute, and we had the best time ❄️</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-img-wrap"><img src="images/timeline-4.png" alt="Dinner date"></div>
+                <div class="timeline-card">
+                    <span class="timeline-label">Dinner date</span>
+                    <p>That place with the pretty lights and our matching smiles 🍽️💕</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-img-wrap"><img src="images/timeline-5.png" alt="Christmas"></div>
+                <div class="timeline-card">
+                    <span class="timeline-label">Christmas</span>
+                    <p>You kissing my cheek by the tree — best holiday memory ever 🎄</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-img-wrap"><img src="images/timeline-6.png" alt="Adventures"></div>
+                <div class="timeline-card">
+                    <span class="timeline-label">Adventures</span>
+                    <p>Exploring the city with you — every day with you feels like an adventure 🚇</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Valentine page -->
+<section id="valentine" class="page">
+    <div class="valentine-wrap">
+        <div class="valentine-hearts">💕</div>
+        <h2 class="valentine-title">Eujin</h2>
+        <p class="valentine-line">You make every day feel special.</p>
+        <p class="valentine-question">Will you be my Valentine? 💗</p>
+        <div class="valentine-buttons">
+            <button type="button" id="valentineYes" class="valentine-btn yes">Yes! 💖</button>
+            <button type="button" id="valentineYes2" class="valentine-btn yes">Of course! 🌸</button>
+        </div>
+        <p class="valentine-footer">(There’s only one right answer… and it’s you saying yes 🥹)</p>
+    </div>
+</section>
 
 <div id="popup" class="popup hidden">
     <div class="popup-content">

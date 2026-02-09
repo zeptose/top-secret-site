@@ -1,3 +1,26 @@
+// Tab navigation
+const tabBtns = document.querySelectorAll('.tab-btn');
+const pages = document.querySelectorAll('.page');
+const sideGalleries = document.querySelectorAll('.side-gallery');
+const surpriseBtn = document.getElementById('surpriseBtn');
+
+function showPage(tabId) {
+    pages.forEach(p => p.classList.remove('active'));
+    tabBtns.forEach(b => b.classList.remove('active'));
+    const page = document.getElementById(tabId);
+    const btn = document.querySelector('.tab-btn[data-tab="' + tabId + '"]');
+    if (page) page.classList.add('active');
+    if (btn) btn.classList.add('active');
+    // Show side galleries only on thoughts page
+    const showGallery = tabId === 'thoughts';
+    sideGalleries.forEach(g => { g.style.display = showGallery ? '' : 'none'; });
+    surpriseBtn.style.display = (tabId === 'thoughts' && window.scrollY + window.innerHeight >= document.body.scrollHeight - 50) ? 'block' : 'none';
+}
+
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => showPage(btn.getAttribute('data-tab')));
+});
+
 // Floating hearts
 const heartsContainer = document.getElementById('hearts-container');
 
@@ -18,6 +41,32 @@ function createHeart() {
 
 // Hearts continuously spawn
 setInterval(createHeart, 200);
+
+// Valentine "Yes" buttons — hearts explosion
+document.querySelectorAll('#valentineYes, #valentineYes2').forEach(btn => {
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+        const colors = ['#ff4d88', '#ff99c8', '#ffd1dc', '#ff66aa', '#fff0f5'];
+        for (let i = 0; i < 120; i++) {
+            const el = document.createElement('div');
+            el.innerText = ['💕', '💗', '💖', '🌸', '✨'][Math.floor(Math.random() * 5)];
+            el.style.position = 'fixed';
+            el.style.left = '50%';
+            el.style.top = '50%';
+            el.style.fontSize = (18 + Math.random() * 30) + 'px';
+            el.style.pointerEvents = 'none';
+            el.style.zIndex = '9999';
+            document.body.appendChild(el);
+            const angle = Math.random() * 2 * Math.PI;
+            const dist = 150 + Math.random() * 250;
+            el.animate([
+                { transform: 'translate(-50%, -50%) scale(1)', opacity: 1 },
+                { transform: `translate(calc(-50% + ${Math.cos(angle) * dist}px), calc(-50% + ${Math.sin(angle) * dist}px)) scale(0)`, opacity: 0 }
+            ], { duration: 2000 + Math.random() * 800, easing: 'ease-out' });
+            setTimeout(() => el.remove(), 2800);
+        }
+    });
+});
 
 // Surprise popup logic
 const btn = document.getElementById('surpriseBtn');
@@ -81,11 +130,12 @@ yesBtn.addEventListener('click', () => {
     }
 });
 
-// Show surprise button after scrolling to bottom
+// Show surprise button after scrolling to bottom (only on thoughts page)
 window.addEventListener('scroll', () => {
-    if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 50) {
+    const onThoughts = document.getElementById('thoughts').classList.contains('active');
+    if (onThoughts && window.scrollY + window.innerHeight >= document.body.scrollHeight - 50) {
         btn.style.display = 'block';
-    } else {
+    } else if (onThoughts) {
         btn.style.display = 'none';
     }
 });
